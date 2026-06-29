@@ -39,7 +39,12 @@ function App() {
 
   return (
     <>
-      
+      <h1>Todo</h1>
+      {info.success ? 
+        <p>{info.message}</p>
+       :  
+        <p style={{ background: "red" }}>{info.message}</p>
+      }
       <input onChange={handelTaskChange} type="text" />
       <select onChange={handelOptionSelect}>
         <option value="low">low</option>
