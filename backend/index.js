@@ -11,6 +11,10 @@ app.use(express.json());
 app.use(cors())
 
 
+ mongoose.connect('mongodb+srv://mesbaul:MesbaulHaque@cluster0.e8wo0rw.mongodb.net/todo?appName=Cluster0').then(()=>{
+  console.log("Database Connect");
+  
+})
 
 
 app.post('/create/todo',createTodo)
