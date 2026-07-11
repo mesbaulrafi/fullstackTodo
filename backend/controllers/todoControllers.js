@@ -37,6 +37,21 @@ const allTodos = async (req,res)=>{
     })
 }
 
+const deletUser = async (req,res)=>{
+    const {id} = req.params
+    await User.findByIdAndDelete(id)
+    res.send('User Deleted')
+}
 
 
-module.exports = {createTodo,allTodos}
+
+const updateData = async (req, res) => {
+    const { id } = req.params;
+    const updateTask = await Todo.findByIdAndUpdate({_id:id},req.body)
+    res.send({
+        success: true,
+        message: "Todo updated successfully"
+    });
+}
+
+module.exports = {createTodo,allTodos,deletUser,updateData}
