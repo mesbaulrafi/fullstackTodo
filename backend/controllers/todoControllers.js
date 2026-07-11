@@ -39,7 +39,7 @@ const allTodos = async (req,res)=>{
 
 const deletUser = async (req,res)=>{
     const {id} = req.params
-    await User.findByIdAndDelete(id)
+    await Todo.findByIdAndDelete(id)
     res.send('User Deleted')
 }
 

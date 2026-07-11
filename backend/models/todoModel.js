@@ -23,4 +23,4 @@ const todoSchema = new Schema({
 
 
 
-module.exports = mongoose.model('TOdo',todoSchema)
+module.exports = mongoose.model('Todo',todoSchema)
