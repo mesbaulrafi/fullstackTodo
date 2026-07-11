@@ -15,7 +15,8 @@ const createTodo = (req,res)=>{
 
     const todo = new Todo ({
         task: task,
-        priority: priority
+        priority: priority,
+        path:req.file.path
     })
 
     todo.save()

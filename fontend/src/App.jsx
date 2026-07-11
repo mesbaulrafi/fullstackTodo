@@ -71,12 +71,14 @@ let handleEdit = async (item) => {
         <option value="medium">Meidum</option>
         <option value="high">High</option>
       </select>
+      <input type="file" />
       <button onClick={handelClick}>Submit</button> 
 
       <ul>
       {data.map(item=>(
       <div key={item.id}>
-         <li>{item.task }  ....... {item.priority} ...... {item.status} </li>
+         <li>{item.task }  ....... {item.priority} ...... {item.status}.......  </li>
+         <img src={`http://localhost:3000/${item.path}`} />
        <button  onClick={() => handleDelete(item._id)}>Delete</button>
        <button  onClick={() => handleEdit(item)}>Edit</button>
       </div>  

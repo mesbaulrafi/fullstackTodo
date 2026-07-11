@@ -18,7 +18,13 @@ const todoSchema = new Schema({
         type:String,
         enum: ['low','medium','high'],
         required : true
+    },
+
+    path:{
+        type:String,
+        
     }
+
 })
 
 
