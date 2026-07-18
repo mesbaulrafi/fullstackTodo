@@ -13,10 +13,8 @@ app.use(cors());
 app.use('/uploads', express.static('uploads'));
 
 
- mongoose.connect('mongodb+srv://mesbaul:MesbaulHaque@cluster0.e8wo0rw.mongodb.net/todo?appName=Cluster0').then(()=>{
-  console.log("Database Connect");
-  
-})
+connectDB();
+
 
 // multer for images
 const storage = multer.diskStorage({
