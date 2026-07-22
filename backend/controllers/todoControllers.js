@@ -6,7 +6,7 @@ const createTodo = (req,res)=>{
 
 
     if(!task || !priority){
-        return res.send({
+        return res.json({
             success: false,
 
             massage: 'plase fill the all fields'
@@ -21,7 +21,7 @@ const createTodo = (req,res)=>{
 
     todo.save()
 
-    res.send({
+    res.json({
         success:true,
         massage: 'Todo Created'
 
@@ -31,7 +31,7 @@ const createTodo = (req,res)=>{
 
 const allTodos = async (req,res)=>{
     let data = await Todo.find({})
-    res.send({
+    res.json({
         success:true,
         message: "Todo Collected",
         data : data
@@ -41,7 +41,7 @@ const allTodos = async (req,res)=>{
 const deletUser = async (req,res)=>{
     const {id} = req.params
     await Todo.findByIdAndDelete(id)
-    res.send('User Deleted')
+    res.json('User Deleted')
 }
 
 
@@ -49,7 +49,7 @@ const deletUser = async (req,res)=>{
 const updateData = async (req, res) => {
     const { id } = req.params;
     const updateTask = await Todo.findByIdAndUpdate({_id:id},req.body)
-    res.send({
+    res.json({
         success: true,
         message: "Todo updated successfully"
     });
