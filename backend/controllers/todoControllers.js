@@ -21,7 +21,7 @@ const createTodo = (req,res)=>{
 
     todo.save()
 
-    res.json({
+    res.status(201).json({
         success:true,
         massage: 'Todo Created'
 
